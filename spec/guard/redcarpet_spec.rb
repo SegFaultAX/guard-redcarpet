@@ -10,4 +10,13 @@ describe Guard::Redcarpet do
       subject.run_all
     end
   end
+
+  describe 'building markdown to html' do
+    it 'should notify other guards upon completion' do
+      other_guard = mock('guard')
+      other_guard.should_receive(:watchers).and_return([])
+      Guard.stub(:guards).and_return([subject, other_guard])
+      subject.notify([])
+    end
+  end  
 end
