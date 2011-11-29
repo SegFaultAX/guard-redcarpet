@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "guard-redcarpet/version"
+require 'guard/redcarpet/version'
 
 Gem::Specification.new do |s|
   s.name        = "guard-redcarpet"
-  s.version     = Guard::Redcarpet::VERSION
+  s.version     = Guard::RedcarpetVersion::VERSION
   s.authors     = ["Michael-Keith Bernard"]
   s.email       = ["mkbernard.dev@gmail.com"]
   s.homepage    = "https://github.com/SegFaultAX/guard-redcarpet"
@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
-  s.add_runtime_dependency "redcarpet"
+  s.add_runtime_dependency "redcarpet", ">= 1.17.2"
 end

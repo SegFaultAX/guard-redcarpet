@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    guard-redcarpet (0.0.1)
-      redcarpet
+    guard-redcarpet (0.0.1.alpha)
+      redcarpet (>= 1.17.2)
 
 GEM
   remote: http://rubygems.org/
