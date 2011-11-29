@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
-  s.add_runtime_dependency "redcarpet", ">= 1.17.2"
+  s.add_runtime_dependency "redcarpet", ">= 2.0.0b5"
 end
