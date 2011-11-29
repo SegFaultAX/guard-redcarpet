@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Guard::Redcarpet::VERSION
   s.authors     = ["Michael-Keith Bernard"]
   s.email       = ["mkbernard.dev@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/SegFaultAX/guard-redcarpet"
+  s.summary     = %q{Guard for Redcarpet}
+  s.description = %q{Compiles file.html.md and file.html.markdown files to file.html using Redcarpet gem.}
 
   s.rubyforge_project = "guard-redcarpet"
 
@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_development_dependency "rspec"
+  s.add_runtime_dependency "redcarpet"
 end
