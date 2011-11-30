@@ -1,6 +1,6 @@
 # Guard::Redcarpet
 
-[Guard](https://github.com/guard/guard) for Markdown using the
+[Guard](https://github.com/guard/guard) extension for Markdown using the
 [Redcarpet](https://github.com/tanoku/redcarpet) gem. There is an existing
 [guard-markdown](https://github.com/darwalenator/guard-markdown) gem, but it
 uses Kramdown.
@@ -35,7 +35,7 @@ The default Guard template watches for .html.md and .html.markdown files:
       watch(/^.+(\.html\.md)$/)
     end
 
-You can overried the output directory with the `override` option:
+You can overried the output directory with the `output` option:
 
     guard 'redcarpet', :output => 'compiled' do
       watch(/^.+(\.html\.markdown)$/)
@@ -62,7 +62,7 @@ Consult the Redcarpet 2.0 documentation for details.
 
 ## Special Thanks
 
-Much of the code for this gem was a direct port for the [guard-haml
+Much of the code for this gem was a direct port of the [guard-haml
 gem](https://github.com/manufaktor/guard-haml) by [Immanuel
 Häussermann](https://github.com/manufaktor)
 
