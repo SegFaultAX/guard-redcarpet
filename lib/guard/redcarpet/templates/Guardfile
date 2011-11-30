@@ -1,4 +1,4 @@
 guard 'redcarpet' do
-  watch(/^.+(\.html\.markdown)/)
-  watch(/^.+(\.html\.md)/)
+  watch(/^.+(\.html\.markdown)$/)
+  watch(/^.+(\.html\.md)$/)
 end

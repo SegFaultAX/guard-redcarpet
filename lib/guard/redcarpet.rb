@@ -14,7 +14,11 @@ module Guard
     end
 
     def compile_file(file)
-      compile_markdown(File.new(file).read)
+      begin
+        compile_markdown(File.new(file).read)
+      rescue StandardError => e
+        ::Guard::UI.info "Redcarpet File Error: #{e}"
+      end
     end
 
     def compile_markdown(content)
