@@ -13,14 +13,17 @@ module Guard
       @watchers, @options = watchers, options
     end
 
-    def compile_redcarpet(file)
-      content = File.new(file).read
+    def compile_file(file)
+      compile_markdown(File.new(file).read)
+    end
+
+    def compile_markdown(content)
       begin
-        render = Redcarpet::Render::HTML.new(@options[:render_options] || {})
-        markdown = Redcarpet::Markdown.new(render, (@options[:markdown_options] || {}))
+        render = ::Redcarpet::Render::HTML.new(@options[:render_options] || {})
+        markdown = ::Redcarpet::Markdown.new(render, (@options[:markdown_options] || {}))
         markdown.render content
       rescue StandardError => e
-        Guard::UI.info "Redcarpet Error: #{e}"
+        ::Guard::UI.info "Redcarpet Error: #{e}"
       end
     end
 
@@ -40,7 +43,7 @@ module Guard
       paths.each do |file|
         output_file = get_output file
         FileUtils.mkdir_p File.dirname(output_file)
-        File.open(output_file, 'w') { |f| f.write(compile_redcarpet(file)) }
+        File.open(output_file, 'w') { |f| f.write(compile_file(file)) }
         ::Guard::UI.info "# compiled markdown in '#{file}' to html in '#{output_file}'"
         ::Guard::Notifier.notify("# compiled markdown in #{file}", :title => "Guard::Redcarpet", :image => :success) if @options[:notifications]
       end
