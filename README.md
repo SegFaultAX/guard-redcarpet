@@ -35,7 +35,7 @@ The default Guard template watches for .html.md and .html.markdown files:
       watch(/^.+(\.html\.md)$/)
     end
 
-You can overried the output directory with the `output` option:
+You can override the output directory with the `output` option:
 
     guard 'redcarpet', :output => 'compiled' do
       watch(/^.+(\.html\.markdown)$/)
@@ -44,7 +44,7 @@ You can overried the output directory with the `output` option:
 
 ### Markdown and Render options
 
-Options for the `Redcarpet::Markdown` and `Redcarpet::Render::HTML` can be
+Options for the `Redcarpet::Markdown` and `Redcarpet::Render::HTML` objects can be
 provided via the `markdown_options` and `render_options` options respectively.
 
     guard 'redcarpet', :markdown_options => { :strikethrough => true } do
